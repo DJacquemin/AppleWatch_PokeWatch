@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PokeWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="OGf-RR-ys5">
+                            <items>
+                                <tableRow identifier="pokeName" id="aUM-F4-0Ab" customClass="PokeRow" customModule="PokeWatch_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="aNj-Y5-Cyp">
+                                        <items>
+                                            <label width="1" alignment="left" text="Label" textAlignment="center" id="4lc-He-ewd"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="4lc-He-ewd" id="NGv-2V-C2U"/>
+                                        <segue destination="bFJ-YP-uQC" kind="push" identifier="pokemon_segue_identifier" id="RFq-Lj-s2Q"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="pokeList" destination="OGf-RR-ys5" id="mvB-Tq-GkX"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--Pokemon Interface Controller-->
+        <scene sceneID="VWd-Qi-2jD">
+            <objects>
+                <controller id="bFJ-YP-uQC" customClass="PokemonInterfaceController" customModule="PokeWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="loading.." textAlignment="center" id="Znd-Jk-0TL"/>
+                        <imageView width="1" alignment="left" contentMode="scaleAspectFit" id="9xO-HZ-l7f"/>
+                        <label width="1" alignment="left" text="loading.." textAlignment="center" id="x7U-ve-P7j"/>
+                    </items>
+                    <connections>
+                        <outlet property="nameLabel" destination="Znd-Jk-0TL" id="S5B-Hh-7qY"/>
+                        <outlet property="spriteImageView" destination="9xO-HZ-l7f" id="wbl-WC-nzn"/>
+                        <outlet property="typeLabel" destination="x7U-ve-P7j" id="vSH-a7-iqF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1177" y="602"/>
+        </scene>
+    </scenes>
+</document>
